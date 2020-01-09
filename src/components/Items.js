@@ -4,7 +4,7 @@ import { closedChest, openChest, closedFinalChest, openFinalChest } from 'dojo-h
 
 import { itemsCount, zoneRadius, markerSize } from 'dojo-halloween/src/helpers/constants';
 
-const Box = (item, isFound, isFinalChestVisible) => {
+const Box = (item, isFound, isFinalTreasureVisible) => {
   const image =
     item.type === 'treasure'
       ? isFound
@@ -14,7 +14,7 @@ const Box = (item, isFound, isFinalChestVisible) => {
         ? openChest
         : closedChest;
   return (
-    (item.type === 'good' || isFinalChestVisible) && (
+    (item.type === 'good' || isFinalTreasureVisible) && (
       <View
         key={item.key}
         pointerEvents={'box-none'}
@@ -57,7 +57,7 @@ const Danger = item => (
 export class Items extends React.Component<*> {
   static defaultProps = {
     foundTreasures: [],
-    isFinalChestVisible: false,
+    isFinalTreasureVisible: false,
     style: {},
   };
 
@@ -67,7 +67,7 @@ export class Items extends React.Component<*> {
         {this.props.itemsList.map(item => {
           if (item.type === 'bad') return Danger(item);
           const isFound = this.props.foundTreasures.includes(item.key);
-          return Box(item, isFound, this.props.isFinalChestVisible);
+          return Box(item, isFound, this.props.isFinalTreasureVisible);
         })}
       </View>
     );

@@ -44,7 +44,7 @@ export default class App extends React.Component<*> {
     showSlenderManModal: false,
     keysNumber: 0,
     openedItemsKeys: [],
-    isFinalChestVisible: false,
+    isFinalTreasureVisible: false,
     isInDanger: false,
     collidingElement: null,
     showTreasureIndication: false,

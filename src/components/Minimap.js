@@ -23,7 +23,7 @@ export const Minimap = props => (
   <MinimapContainerView background={props.background} pointerEvents={'box-none'}>
     {props.itemsList.map(
       item =>
-        (item.type !== 'treasure' || props.isFinalChestVisible) && (
+        (item.type !== 'treasure' || props.isFinalTreasureVisible) && (
           <View
             key={item.key}
             style={{
