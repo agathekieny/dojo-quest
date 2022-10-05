@@ -10,7 +10,7 @@
     "coverage:flow": "flow-coverage-report -i 'src/**/*.js' -i App.js"
   },
   "dependencies": {
-    "expo": "^33.0.0",
+    "expo": "^46.0.14",
     "lodash": "^4.17.11",
     "react": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
